@@ -7,13 +7,12 @@ import Header from "../Header/Header";
 import CarouselExampleDark from "../Carousel/CarouselExampleDark"
 import IconCard from "../Card/IconCard";
 import CardProducto from "../Card/CardProducto";
-import Footer from '../Footer';
-import SidebarNav from '../SidebarNav';
+import Footer from '../Footer'; 
 
-function Home2() {   
+function Home() {   
     
   return ( 
-		<body className="bg-light">
+		<div className="bg-light">
 			<div className="osahan-page d-flex flex-column vh-100 bg-light">
 				<Header></Header>
 				<div className="osahan-page-body vh-100 my-auto overflow-auto px-3 pb-3">
@@ -55,9 +54,8 @@ function Home2() {
 				<Footer></Footer>
 				
 			</div>
-			<SidebarNav></SidebarNav>
-		</body> 
+		</div> 
   )
 }
 
-export default Home2
+export default Home

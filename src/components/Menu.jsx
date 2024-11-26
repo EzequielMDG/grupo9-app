@@ -1,37 +1,37 @@
 import React from 'react'
-import { useEffect } from 'react';  
 import avatarImg from '../img/user/1.jpeg';
+import SidebarNav from './SidebarNav';
 
 
 function Menu() {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = '/js/hc-offcanvas-nav.js';
-        script.onload = () => {
-          // Verifica si hcOffcanvasNav está disponible en el ámbito global
-          if (typeof window.hcOffcanvasNav === 'function') {
-            const mainNav = document.getElementById('main-nav');
-            const toggle = document.querySelector('.toggle');
-            const options = {
-              disableAt: false,
-              customToggle: toggle,
-              levelSpacing: 40,
-              navTitle: '',
-              levelTitles: true,
-              levelTitleAsBack: true,
-              pushContent: document.getElementById('container'),
-              insertClose: 2,
-            };
-            window.hcOffcanvasNav(mainNav, options);
-          } else {
-            console.error('hcOffcanvasNav is not defined');
-          }
-        };
-        script.onerror = () => {
-          console.error('Failed to load hc-offcanvas-nav.js');
-        };
-        document.body.appendChild(script);
-      }, []);
+    // useEffect(() => {
+    //     const script = document.createElement('script');
+    //     script.src = '/js/hc-offcanvas-nav.js';
+    //     script.onload = () => {
+    //       Verifica si hcOffcanvasNav está disponible en el ámbito global
+    //       if (typeof window.hcOffcanvasNav === 'function') {
+    //         const mainNav = document.getElementById('main-nav');
+    //         const toggle = document.querySelector('.toggle');
+    //         const options = {
+    //           disableAt: false,
+    //           customToggle: toggle,
+    //           levelSpacing: 40,
+    //           navTitle: '',
+    //           levelTitles: true,
+    //           levelTitleAsBack: true,
+    //           pushContent: document.getElementById('container'),
+    //           insertClose: 2,
+    //         };
+    //         window.hcOffcanvasNav(mainNav, options);
+    //       } else {
+    //         console.error('hcOffcanvasNav is not defined');
+    //       }
+    //     };
+    //     script.onerror = () => {
+    //       console.error('Failed to load hc-offcanvas-nav.js');
+    //     };
+    //     document.body.appendChild(script);
+    //   }, []);
       
     return (
     <div>
@@ -55,6 +55,7 @@ function Menu() {
             </div> 
         </div>
         {/* <!-- End Header--> */}
+		<SidebarNav></SidebarNav>
     </div>
   )
 }
