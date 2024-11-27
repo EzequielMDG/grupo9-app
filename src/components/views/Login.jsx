@@ -20,7 +20,7 @@ function Login() {
                <div className="py-4 vstack gap-3"> 
                     <Link to="/Home" type="button" className="btn btn-primary rounded-4 w-100 btn-lg">Ingresar</Link> 
 
-                    <p className="ps-2 fw-semibold fs-5 text-center mt-3 text-secondary">No tenés una cuenta? <a href="#" className="text-black ps-2 text-decoration-none">Registrarme</a></p>
+                    <p className="ps-2 fw-semibold fs-5 text-center mt-3 text-secondary">No tenés una cuenta? <Link href="#" className="text-black ps-2 text-decoration-none">Registrarme</Link></p>
                </div>
             </div>
             </div>

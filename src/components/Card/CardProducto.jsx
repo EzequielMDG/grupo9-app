@@ -12,7 +12,7 @@ function CardProducto() {
         <div className="card rounded-4 border-0 shadow-sm osahan-card">
             <div className="card-body d-flex flex-column">
                 <span className="material-symbols-outlined ms-auto">favorite</span> 
-                <img className='img-fluid mb-3' src={myImage} alt="My Image" />
+                <img className='img-fluid mb-3' src={myImage} alt="" />
                 <div className="d-flex">
                     <span className="badge rounded-pill bg-info-subtle pt-1 text-info">Healthy</span>
                 </div>

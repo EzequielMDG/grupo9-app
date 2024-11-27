@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 
 import bannerImage from '../../img/list/6.jpeg';
 
@@ -43,7 +43,7 @@ function ReviewPayment() {
             <div className="input-group mb-3 bg-white rounded-4 shadow overflow-hidden">
                <span className="input-group-text bg-white border-0 ps-3"><i className="mdi mdi-ticket-confirmation-outline fs-4"></i></span>
                <input type="text" className="form-control border-0 px-2 py-3" placeholder="Aplicar cupón" />
-               <a href="#" className="btn btn-primary rounded-0 border-0 px-4 btn-lg">Aplicar</a>
+               <Link to="#" className="btn btn-primary rounded-0 border-0 px-4 btn-lg">Aplicar</Link>
             </div>
             <div className="bg-white rounded-4 shadow overflow-hidden p-3">
                <div className="d-flex text-secondary dashed-border align-items-center mb-2">

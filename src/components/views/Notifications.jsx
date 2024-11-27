@@ -42,7 +42,7 @@ function Notifications() {
                     <div className="bg-white rounded-4 mb-3 shadow-sm">
                         <div className="d-flex p-3">
                         <div className="d-flex gap-3 align-items-center">
-                            <img src="img/list/1.jpeg" className="img-fluid w-payment-long rounded-3"/>
+                            <img src="img/list/1.jpeg" className="img-fluid w-payment-long rounded-3" alt=""/>
                             <div className="lh-sm">
                                 <p className="mb-1 fw-bold">Chicken Hall</p>
                                 <p className="mb-0 text-secondary small">On The Way</p>
@@ -54,7 +54,7 @@ function Notifications() {
                     <div className="bg-white rounded-4 mb-3 shadow-sm">
                         <div className="d-flex p-3">
                         <div className="d-flex gap-3 align-items-center">
-                            <img src="img/list/2.jpeg" className="img-fluid w-payment-long rounded-3"/>
+                            <img src="img/list/2.jpeg" className="img-fluid w-payment-long rounded-3" alt=""/>
                             <div className="lh-sm">
                                 <p className="mb-1 fw-bold">Swe Dish</p>
                                 <p className="mb-0 text-success small">Deliverd</p>
@@ -67,7 +67,7 @@ function Notifications() {
                     <div className="bg-white rounded-4 mb-3 shadow-sm">
                         <div className="d-flex p-3">
                         <div className="d-flex gap-3 align-items-center">
-                            <img src="img/list/3.jpeg" className="img-fluid w-payment-long rounded-3"/>
+                            <img src="img/list/3.jpeg" className="img-fluid w-payment-long rounded-3" alt=""/>
                             <div className="lh-sm">
                                 <p className="mb-1 fw-bold">Fish Hell Veg</p>
                                 <p className="mb-0 text-danger small">Cancelled</p>

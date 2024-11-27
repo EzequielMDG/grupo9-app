@@ -22,7 +22,7 @@ function Register() {
         <div className="col">
             <div className="py-4 vstack gap-3"> 
                 <Link to="/Verificacion" type="button" className="btn btn-primary rounded-4 w-100 btn-lg">Registrarme</Link>  
-                <p className="ps-2 fw-semibold fs-5 text-center mt-3">¿Ya tenés una cuenta? <a href="#" className="text-primary ps-2 text-decoration-none">Ingresar</a></p>
+                <p className="ps-2 fw-semibold fs-5 text-center mt-3">¿Ya tenés una cuenta? <Link href="#" className="text-primary ps-2 text-decoration-none">Ingresar</Link></p>
             </div>
         </div>
         </div>
