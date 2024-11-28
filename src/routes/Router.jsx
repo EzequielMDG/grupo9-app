@@ -36,28 +36,23 @@ const router = createBrowserRouter([
 			{
 				path: "/Notificaciones",
 				element: <Notifications />,
-			}
-			,
+			},
 			{
 				path: "/Chat",
 				element: <Chat />,
-			}
-			,
+			},
 			{
 				path: "/MiPerfil",
 				element: <Profile />,
-			}
-			,
+			},
 			{
 				path: "/AgregarAlCarrito",
 				element: <AddToCart />,
-			}
-			,
+			},
 			{
 				path: "/AgregarAlCarrito2",
 				element: <AddToCart2 />,
-			}
-			,
+			},
 			{
 				path: "/Carrito",
 				element: <ReviewPayment />,
