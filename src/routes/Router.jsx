@@ -24,31 +24,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <App/>,
         errorElement: <Error404/>,
-		children: [
-			{
-				index: true,
-				element: <LoadApp/>,
-			},
-			{
-				path: "/OnBoarding1",
-				element: <OnBoarding1 />,
-			},
-			{
-				path: "/Registrarme",
-				element: <Register />,
-			}, 
-			{
-				path: "/Verificacion",
-				element: <Verification />,
-			},
-			{
-				path: "/VerificarCodigo",
-				element: <VerifyCode />,
-			},
-			{
-				path: "/Login",
-				element: <Login />,
-			},
+		children: [  
 			{
 				path: "/Home",
 				element: <Home />,
@@ -87,7 +63,32 @@ const router = createBrowserRouter([
 				element: <ReviewPayment />,
 			} 
 		]
-    }
+    },
+	{
+		index: true,
+		element: <LoadApp/>,
+	},
+	{
+		path: "/OnBoarding1",
+		element: <OnBoarding1 />,
+	},
+	{
+		path: "/Login",
+		element: <Login />,
+	},
+	{
+		path: "/Registrarme",
+		element: <Register />,
+	}, 
+	{
+		path: "/Verificacion",
+		element: <Verification />,
+	},
+	{
+		path: "/VerificarCodigo",
+		element: <VerifyCode />,
+	},
+	
     
 ], {
     future: {
