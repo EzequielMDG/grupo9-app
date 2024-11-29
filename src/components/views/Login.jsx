@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import React, { useState } from 'react';
 import {Link, useNavigate}  from 'react-router-dom';
 import { API_URL } from '../../constants/env'; 
 import { setToken } from '../../helpers/auth';
@@ -11,7 +11,8 @@ function Login() {
    const [error, setError] = useState() 
 
    const handleSubmit = (e) => {
-		e.preventDefault()  
+		e.preventDefault()
+      setError()  
 		const data = {
 			email: e.target.email.value,
 			password: e.target.password.value
@@ -26,8 +27,8 @@ function Login() {
          })
    }
   return (
-      <LoginTemplate>
-         <form  onSubmit={handleSubmit}> 
+   <LoginTemplate title="Ingresar a mi cuenta"> 
+      <form  onSubmit={handleSubmit}> 
 				<div className="input-group mb-3 bg-white rounded-4 shadow p-1">
 				<span className="input-group-text bg-white border-0 ps-3"><i className="mdi mdi-email-outline fs-4"></i></span>
 				<input type="email" name='email' className="form-control border-0 px-2 py-3" placeholder="E-mail" />
@@ -49,7 +50,7 @@ function Login() {
                <p className=''>{error?.response?.data?.data}</p>
             )}
 			</form>
-      </LoginTemplate>
+   </LoginTemplate>
   )
 }
 

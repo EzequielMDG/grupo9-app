@@ -28,6 +28,7 @@ function SidebarNav() {
                 <li><Link to="/Chat"><span className="mdi mdi-message-outline me-3"></span>Chat</Link></li> 
                 <li><Link to="/Carrito"><span className="mdi mdi-cart-outline me-3"></span>Carrito</Link></li>
                 <li><Link to="/Rating"><span className="mdi mdi-star-outline me-3"></span>Calificar</Link></li>
+                <li className="mt-5"><Link to="/Rating"><span className="mdi mdi-star-outline me-3"></span>Cerrar Sesión</Link></li>
 
             </ul>
             <ul className="bottom-nav">
