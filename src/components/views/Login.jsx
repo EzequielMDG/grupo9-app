@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import {Link}  from 'react-router-dom';
+import {Link, useNavigate}  from 'react-router-dom';
 import { API_URL } from '../../constants/env'; 
+import { setToken } from '../../helpers/auth';
 
 function Login() {
+   const nav = useNavigate()
+
+   const [error, setError] = useState() 
+
    const handleSubmit = (e) => {
-		e.preventDefault() 
-      alert("Formulario enviado")
+		e.preventDefault()  
 		const data = {
 			email: e.target.email.value,
 			password: e.target.password.value
 		}
 		axios.post(`${API_URL}/public/login`, data)
-			.then(resp => console.log(resp))
-			.catch(error => console.log(error))
+      .then((resp) => { 
+         setToken(resp.data.data.token)
+            nav("/Home")
+         })
+			.catch((err) => {
+            setError(err)
+         })
    }
   return (
    
@@ -21,8 +30,7 @@ function Login() {
          <div className="osahan-page-body vh-100 my-auto overflow-auto p-3">
             <h5 className="display-4 fw-bold py-5">Ingresar a<br/>mi cuenta</h5>
 
-			<form  onSubmit={handleSubmit}>
-			{/* <form> */}
+			<form  onSubmit={handleSubmit}> 
 				<div className="input-group mb-3 bg-white rounded-4 shadow p-1">
 				<span className="input-group-text bg-white border-0 ps-3"><i className="mdi mdi-email-outline fs-4"></i></span>
 				<input type="email" name='email' className="form-control border-0 px-2 py-3" placeholder="E-mail" />
@@ -39,7 +47,10 @@ function Login() {
 
 						<p className="ps-2 fw-semibold fs-5 text-center mt-3 text-secondary">No tenés una cuenta? <Link to="/Registrarme" className="text-black ps-2 text-decoration-none">Registrarme</Link></p>
 				</div>
-				</div> 
+				</div>
+            {error && (
+               <p className=''>{error?.response?.data?.data}</p>
+            )}
 			</form>
 
             </div>
