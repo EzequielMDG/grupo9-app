@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import hcOffcanvasNav from 'hc-offcanvas-nav';
+import hcOffcanvasNav from 'hc-offcanvas-nav'; 
 
 function Footer() {
+    
     useEffect(() => {
         // Inicializar el menú off-canvas
         const mainNav = document.getElementById('main-nav');
@@ -33,6 +34,16 @@ function Footer() {
 
   return (
     <>
+    {/* Menú Offcanvas */}
+    <nav id="main-nav" style={{ display: 'none' }}>
+                <ul>
+                    <li><NavLink to="/Home">Home</NavLink></li>
+                    <li><NavLink to="/Favoritos">Favoritos</NavLink></li>
+                    <li><NavLink to="/Chat">Chat</NavLink></li>
+                    <li><NavLink to="/Notificaciones">Notificaciones</NavLink></li>
+                    <li><NavLink to="/MiPerfil">Mi Perfil</NavLink></li>
+                </ul>
+            </nav>
         <footer className="osahan-page-footer mt-auto p-3">
             <div className="d-flex justify-content-between align-items-center bg-white shadow rounded-pill px-3">
                 <div className="text-center lh-1 col"> 
@@ -68,7 +79,8 @@ function Footer() {
                         <span className='p-3 d-block'>
                             <span className="material-symbols-outlined text-secondary">person</span>
                         </span>
-                    </NavLink> 
+                    </NavLink>  
+                    
                 </div>
             </div>
         </footer>

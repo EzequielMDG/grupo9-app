@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import avatarImg from '../img/user/1.jpeg';
+import avatarImg from '../img/user/1.jpeg'; 
+import { token } from '../helpers/auth';
 
 
-function SidebarNav() {
+function SidebarNav() {  
   return (
     <>
         {/* <!-- sidebar nav --> */}
@@ -27,8 +28,7 @@ function SidebarNav() {
                 <li><Link to="/Profile"><span className="mdi mdi-account-outline me-3"></span>Mi cuenta</Link></li>
                 <li><Link to="/Chat"><span className="mdi mdi-message-outline me-3"></span>Chat</Link></li> 
                 <li><Link to="/Carrito"><span className="mdi mdi-cart-outline me-3"></span>Carrito</Link></li>
-                <li><Link to="/Rating"><span className="mdi mdi-star-outline me-3"></span>Calificar</Link></li>
-                <li className="mt-5"><Link to="/Rating"><span className="mdi mdi-star-outline me-3"></span>Cerrar Sesión</Link></li>
+                <li><Link to="/Rating"><span className="mdi mdi-star-outline me-3"></span>Calificar</Link></li> 
 
             </ul>
             <ul className="bottom-nav">

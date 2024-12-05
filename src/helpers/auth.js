@@ -1,4 +1,4 @@
-import { TOKEN_NAME } from "../constants/env"
+import { TOKEN_NAME } from "../constants/env.js"
 
 export const token = () => localStorage.getItem(TOKEN_NAME)
 

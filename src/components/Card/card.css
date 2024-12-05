@@ -1,19 +1,8 @@
-* {
+/* * {
     box-sizing: border-box;
-}
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-.card {
-    background-color: beige;
-    color: #040404; 
-    padding: 1em; 
-    width: 30%;
-    min-width: 200px;
-    max-width: 300px;
-    border-radius: 8px;
-}
+} */
+ 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */ 
+} 

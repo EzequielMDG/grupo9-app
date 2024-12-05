@@ -1,7 +1,14 @@
 import React from 'react';
 import Footer from '../Footer';
+import { deleteToken, token } from '../../helpers/auth';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Profile() {
+   const nav = useNavigate()
+   const handleSession = () => {
+      deleteToken()
+      nav("/Home")
+  }
   return (
     <div className="osahan-page d-flex flex-column vh-100 bg-light">
          {/* <div className="osahan-page-header d-flex align-items-center justify-content-between mb-auto p-3">
@@ -32,6 +39,26 @@ function Profile() {
                </div>
             </div>
          </div>
+
+            {
+               !token() ? (
+                  <a href="/Login">
+                     <div className='p-3 d-block d-flex'>
+                           <span className="material-symbols-outlined me-2">login</span>
+                           <h4>Iniciar Sesión</h4>
+                     </div>
+                  </a>  
+               ) : (
+                  <a onClick={handleSession}>
+                     <div className='p-3 d-block d-flex'>
+                           <span className="material-symbols-outlined me-2">logout</span>
+                           <h4>Cerrar Sesión</h4>
+                     </div>
+                  </a> 
+               )
+            }
+
+         
          <Footer></Footer>
       </div>
   )

@@ -1,10 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useParams } from 'react-router-dom'; 
 
 import bannerImage from '../../img/list/6.jpeg';
 
-function AddToCart() {
-  return (
+const productos = [
+   { id: 1, nombre: "Pizza Margarita", precio: 12.562, imagenProducto: "/img/productos/pizza1.png" },
+   { id: 2, nombre: "Pizza Pepperoni", precio: 14.000, imagenProducto: "/img/productos/pizza2.png" },
+   { id: 3, nombre: "Pizza Cuatro Estaciones", precio: 16.000, imagenProducto: "/img/productos/pizza3.png" },
+   { id: 4, nombre: "Pizza Cuatro", precio: 16.000, imagenProducto: "/img/productos/pizza4.png" },
+   { id: 5, nombre: "Pizza Cuatro Estaciones", precio: 16.000, imagenProducto: "/img/productos/pizza5.png" },
+   { id: 6, nombre: "Pizza Cuatro Estaciones", precio: 16.000, imagenProducto: "/img/productos/pizza6.png" }
+] 
+
+
+
+function ProductDetail() {
+   const {id} = useParams();
+   const producto = productos.find((product) => product.id === parseInt(id))
+   // console.log(producto)
+   
+   return (
     <div>
       <div className="osahan-page-body vh-90 my-auto overflow-auto">
             <div className="px-3 pb-2 h-cart"> 
@@ -14,7 +29,7 @@ function AddToCart() {
                <div className="row d-flex">
                   <div className="col-8">
                      <div className="mb-3">
-                        <h4 className="mb-0 fw-bold">Chicken Hell</h4>
+                        <h4 className="mb-0 fw-bold">{producto.nombre}</h4>
                         <div className="d-flex align-items-center text-secondary opacity-75 gap-1 mb-2">
                            <p className="mb-0">24min</p>
                            <span className="mdi mdi-circle-small fs-5"></span>
@@ -33,9 +48,9 @@ function AddToCart() {
                      </div>
                   </div>
                </div>
-               <h6>Description</h6>
+               <h6>Descripción</h6>
                <p className="text-secondary opacity-75 mb-4">Chicken Hell Is The Healthies Chicken For Gym Guys And Girls. It Promote Healthy Life Style And Make Your Energy Booster.</p>
-               <h6 className="mb-3">Ingrediants</h6>
+               <h6 className="mb-3">Ingredientes</h6>
                
 
                <div className="vagitable d-flex gap-2 mb-5 ingrediants-box text-center">
@@ -62,13 +77,13 @@ function AddToCart() {
          </div>
          <div className="osahan-page-footer mt-auto p-3">
             <div className="add-btn d-flex align-items-center">
-               <h1 className="mb-0 display-5 fw-semibold">$12</h1>
-               <h3 className="text-secondary opacity-75 mb-0 mt-2 me-4">.99</h3> 
-                <Link to="/Carrito" className="btn btn-primary rounded-4 w-100 btn-lg w-100">Add To Cart</Link> 
+               <h1 className="mb-0 display-5 fw-semibold me-4">${producto.precio}</h1>
+               {/* <h3 className="text-secondary opacity-75 mb-0 mt-2 me-4">.99</h3>  */}
+                <Link to="/Carrito" className="btn btn-primary rounded-4 w-100 btn-lg w-100">Agregar al carrito</Link> 
             </div>
          </div>
     </div>
   )
 }
 
-export default AddToCart
+export default ProductDetail

@@ -12,8 +12,8 @@ import Login from '../components/views/Login';
 import Favorites from '../components/views/Favorites';
 import Notifications from '../components/views/Notifications';
 import Chat from '../components/views/Chat'; 
-import Profile from '../components/views/Profile';
-import AddToCart from '../components/views/AddToCart';
+import Profile from '../components/views/Profile'; 
+import ProductDetail from '../components/views/ProductDetail';
 import AddToCart2 from '../components/views/AddToCart2';
 import ReviewPayment from '../components/views/ReviewPayment'; 
 
@@ -46,8 +46,8 @@ const router = createBrowserRouter([
 				element: <Profile />,
 			},
 			{
-				path: "/AgregarAlCarrito",
-				element: <AddToCart />,
+				path: "/Detalle/:id",
+				element: <ProductDetail />,
 			},
 			{
 				path: "/AgregarAlCarrito2",

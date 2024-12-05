@@ -9,6 +9,15 @@ import IconCard from "../Card/IconCard";
 import CardProducto from "../Card/CardProducto";
 import Footer from '../Footer'; 
 
+const productos = [
+    { id: 1, nombre: "Pizza Margarita", precio: 12.562, imagenProducto: "/img/productos/pizza1.png" },
+    { id: 2, nombre: "Pizza Pepperoni", precio: 14.000, imagenProducto: "/img/productos/pizza2.png" },
+    { id: 3, nombre: "Pizza Cuatro Estaciones", precio: 16.000, imagenProducto: "/img/productos/pizza3.png" },
+    { id: 4, nombre: "Pizza Cuatro", precio: 16.000, imagenProducto: "/img/productos/pizza4.png" },
+    { id: 5, nombre: "Pizza Cuatro Estaciones", precio: 16.000, imagenProducto: "/img/productos/pizza5.png" },
+    { id: 6, nombre: "Pizza Cuatro Estaciones", precio: 16.000, imagenProducto: "/img/productos/pizza6.png" }
+] 
+
 function Home() {   
     
   return ( 
@@ -22,13 +31,15 @@ function Home() {
 					<IconCard></IconCard>
 					
 					<h6 className="mb-3 mt-4 fw-bold">Aprovecha estas promos</h6>
-					<div className="d-flex gap-3 mb-3">
-						<div>
-							<CardProducto></CardProducto>
-						</div>
-						<div>
-							<CardProducto></CardProducto>
-						</div>
+					<div className="products-container gap-3 mb-3"> 
+							{productos.map((producto) => ( 
+								<CardProducto
+									imagen={producto.imagenProducto}
+									nombre={producto.nombre} 
+									precio={producto.precio} 
+									id={producto.id} 
+								/> 
+							))} 
 					</div>
 					<h6 className="mb-3 mt-4 fw-bold">Restaurantes cerca tuyo</h6>
 					<div className="card mb-0 rounded-4 border-0 shadow overflow-hidden osahan-card-2"> 

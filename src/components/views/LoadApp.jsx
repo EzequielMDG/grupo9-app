@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link}  from 'react-router-dom';
 import Logo from '../Atoms/Logo';
+import { API_URL } from '../../constants/env';
 
 
 function LoadApp() {
@@ -14,12 +15,13 @@ function LoadApp() {
                      <div className="col-12 text-center text-white align-items-center">
                         <div className="py-5 my-5 px-5">
                            <Logo />
-                           <div className="col-12 text-center text-white align-items-center mb-5">
+                           {/* <h1>{API_URL}</h1> */}
+                           {/* <div className="col-12 text-center text-white align-items-center mb-5">
                               <div className="spinner-border fs-1" role="status">
                                  <span className="visually-hidden">Loading...</span>
                               </div>
-                           </div> 
-						         <Link to="/OnBoarding1" className="btn btn-light btn-lg rounded-pill px-4">Ingresar<span className="mdi mdi-arrow-right ms-5"></span></Link>
+                           </div>  */}
+						         <Link to="/Home" className="btn btn-light btn-lg rounded-pill px-4">Ingresar<span className="mdi mdi-arrow-right ms-5"></span></Link>
                            
                         </div>
                      </div>

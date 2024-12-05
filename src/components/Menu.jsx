@@ -1,51 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import avatarImg from '../img/user/1.jpeg';
 import SidebarNav from './SidebarNav';
 
 
-function Menu() {
-    // useEffect(() => {
-    //     const script = document.createElement('script');
-    //     script.src = '/js/hc-offcanvas-nav.js';
-    //     script.onload = () => {
-    //       Verifica si hcOffcanvasNav está disponible en el ámbito global
-    //       if (typeof window.hcOffcanvasNav === 'function') {
-    //         const mainNav = document.getElementById('main-nav');
-    //         const toggle = document.querySelector('.toggle');
-    //         const options = {
-    //           disableAt: false,
-    //           customToggle: toggle,
-    //           levelSpacing: 40,
-    //           navTitle: '',
-    //           levelTitles: true,
-    //           levelTitleAsBack: true,
-    //           pushContent: document.getElementById('container'),
-    //           insertClose: 2,
-    //         };
-    //         window.hcOffcanvasNav(mainNav, options);
-    //       } else {
-    //         console.error('hcOffcanvasNav is not defined');
-    //       }
-    //     };
-    //     script.onerror = () => {
-    //       console.error('Failed to load hc-offcanvas-nav.js');
-    //     };
-    //     document.body.appendChild(script);
-    //   }, []);
+function Menu() { 
+    const navigate = useNavigate(); 
       
     return (
     <div>
         {/* <!-- Header--> */}
         <div className="osahan-page-header mb-auto p-3 bg-light">
             <div className="d-flex align-items-center justify-content-between">
-                <Link to="add-to-address.html" className="d-flex align-items-center text-decoration-none me-auto gap-1">
+                <a onClick={() => navigate(-1)} className="text-black bg-white rounded-pill shadow-sm icon-sm"><span className="mdi mdi-arrow-left mdi-18px"></span></a>
+                {/* <Link to="add-to-address.html" className="d-flex align-items-center text-decoration-none me-auto gap-1">
                     <i className="mdi mdi-map-marker-circle h2 m-0 text-primary"></i>
                     <div className="ms-2 lh-1">
                     <h6 className="text-dark mb-0 fw-bold">Enviar a</h6>
                     <small className="Online text-muted opacity-75 mb-0">Los Pinos 123, Corrientes</small>
                     </div>
-                </Link>
+                </Link> */}
+
                 <div className="d-flex align-items-center gap-2">
                     <Link to="profile.html"> 
                     <img className='img-fluid avtar-sm rounded-pill bg-white shadow-sm p-1' src={avatarImg} alt="avatar Img" /> 

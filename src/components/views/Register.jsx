@@ -20,14 +20,24 @@ function Register() {
                 fullname: e.target.fullname.value,
             },
 		}
-		axios.post(`${API_URL}/public/login`, data)
-      .then((resp) => { 
+		axios.post(`${API_URL}/public/users`, data)
+        .then((resp) => { 
          setToken(resp.data.data.token)
             nav("/Login")
          })
-			.catch((err) => {
-            setError(err)
-         })
+         .catch((err) => {
+			console.error('Login Error:', err); // Para depurar en la consola
+			if (err.response) {
+				// Error del servidor
+				setError(err.response.data?.message || 'Error desconocido en el servidor.');
+			} else if (err.request) {
+				// El servidor no respondió
+				setError('No se pudo conectar con el servidor. Intenta más tarde.');
+			} else {
+				// Otro tipo de error
+				setError('Ocurrió un error inesperado.');
+			}
+		});
    }
   return ( 
     <LoginTemplate title="Crearme una cuenta">
@@ -47,12 +57,12 @@ function Register() {
             <div className="col">
                 <div className="py-4 vstack gap-3"> 
                     <button className="btn btn-primary rounded-4 w-100 btn-lg" type='submit'>Registrarme</button>
-                    <p className="ps-2 fw-semibold fs-5 text-center mt-3">¿Ya tenés una cuenta? <Link href="#" className="text-primary ps-2 text-decoration-none">Ingresar</Link></p>
+                    <p className="ps-2 fw-semibold fs-5 text-center mt-3">¿Ya tenés una cuenta? <Link to="/Login" className="text-primary ps-2 text-decoration-none">Ingresar</Link></p>
                 </div>
             </div>
             {error && (
-               <p className=''>{error?.response?.data?.data}</p>
-            )}
+					<p className='text-danger text-center'>{error}</p>
+				)}
         </form>
     </LoginTemplate>
   )
